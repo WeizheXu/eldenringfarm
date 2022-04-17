@@ -17,7 +17,7 @@ you can modify the useSkill function in the script to match your mapping.
 4. Press F10.
 5. Enjoy!
 6. Press F10 again to pause farming. You may need to wait for it to finish one more cycle.
-7. Press F8 to terminate the program. 
+7. Press F8 to terminate the program. You may need to wait for it to finish one more cycle.
 
 ## Notes:
 1. It may break sometimes due to a walking enemy not being one-shotted for some unknown reasons when walked to a certain position.
