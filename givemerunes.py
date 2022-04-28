@@ -30,7 +30,7 @@ def teleportBack(keyboard):
         time.sleep(0.05)
     # with keyboard.pressed('a'):
     #     time.sleep(0.05)
-    waitTime = 1.6
+    waitTime = 1.2
     time.sleep(waitTime/2)
     keyPress(keyboard, 'e')
     time.sleep(waitTime/2)
@@ -45,7 +45,7 @@ def keyPress(controller, key):
     controller.release(key)
 
 def runeHarvest(mouse, keyboard):
-    time.sleep(6)
+    time.sleep(5)
     initialPath(keyboard)
     useSkill(mouse)
     time.sleep(1)
