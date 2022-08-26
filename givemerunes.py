@@ -17,19 +17,20 @@ def smoothMove(mouse, x, y, duration, interval=0.01):
         time.sleep(interval)
 
 def initialPath(keyboard):
-    with keyboard.pressed('w'):
-        time.sleep(3.0)
-    with keyboard.pressed('a'):
-        time.sleep(0.8)
-    with keyboard.pressed('w'):
-        time.sleep(1.9)
+    # with keyboard.pressed('w'):
+    #     time.sleep(3.0)
+    # with keyboard.pressed('a'):
+    #     time.sleep(0.8)
+    # with keyboard.pressed('w'):
+    #     time.sleep(1.9)
+
+    keyPress(keyboard, 'w', sleepTime=3.0)
+    keyPress(keyboard, 'a', sleepTime=0.8)
+    keyPress(keyboard, 'w', sleepTime=1.9)
 
 def teleportBack(keyboard):
     keyPress(keyboard, 'g')
-    with keyboard.pressed('s'):
-        time.sleep(0.05)
-    # with keyboard.pressed('a'):
-    #     time.sleep(0.05)
+    keyPress(keyboard, 's', sleepTime=0.05)
     waitTime = 1.2
     time.sleep(waitTime/2)
     keyPress(keyboard, 'e')
@@ -39,10 +40,12 @@ def teleportBack(keyboard):
 def useSkill(mouse):
     keyPress(mouse, Button.middle)
 
-def keyPress(controller, key):
-    controller.press(key)
-    time.sleep(1)
-    controller.release(key)
+def keyPress(controller, key, sleepTime=1.0):
+    global active, endProgram
+    if active and not endProgram:
+        controller.press(key)
+        time.sleep(sleepTime)
+        controller.release(key)
 
 def runeHarvest(mouse, keyboard):
     time.sleep(5)
@@ -56,9 +59,9 @@ def on_press(key):
 
 def on_release(key):
     global active, endProgram
-    if key == Key.f10:
+    if key == Key.delete:
         active = not active
-    if key == Key.f8:
+    if key == Key.f9:
         endProgram = True       
 def main():
     keyboard = Controller()
